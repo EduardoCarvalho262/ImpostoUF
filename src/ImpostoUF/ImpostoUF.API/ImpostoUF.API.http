@@ -1,0 +1,6 @@
+@ImpostoUF.API_HostAddress = http://localhost:5290
+
+GET {{ImpostoUF.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
