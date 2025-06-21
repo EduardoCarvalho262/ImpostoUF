@@ -12,13 +12,19 @@
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.2" />
+    <PackageReference Include="Shouldly" Version="4.3.0" />
     <PackageReference Include="xunit" Version="2.5.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
   </ItemGroup>
 
   <ItemGroup>
     <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ImpostoUF.API\ImpostoUF.API.csproj" />
+    <ProjectReference Include="..\ImpostoUF.Application\ImpostoUF.Application.csproj" />
+    <ProjectReference Include="..\ImpostoUF.Domain\ImpostoUF.Domain.csproj" />
   </ItemGroup>
 
 </Project>
