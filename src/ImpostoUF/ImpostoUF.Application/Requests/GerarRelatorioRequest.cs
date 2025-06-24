@@ -2,6 +2,6 @@
 {
     public class GerarRelatorioRequest
     {
-        public string tipo {  get; set; }
+        public string Tipo {  get; set; }
     }
 }

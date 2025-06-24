@@ -20,7 +20,7 @@ namespace ImpostoUF.Tests.Application.UseCases
         public void DadoRequestTipoMediaAnualIpiEstados_QuandoChamarOUseCase_RetornarUmaListaDeArrecadacao()
         {
             //Arrange
-            var request = new GerarRelatorioRequest { tipo = "MediaAnualIPIEstados" };
+            var request = new GerarRelatorioRequest { Tipo = "media-anual" };
             ArrecadacaoIpi arrecadacaoIpi = new ArrecadacaoIpi();
             arrecadacaoIpi.Ano = 2012;
             arrecadacaoIpi.Mes = 02;
