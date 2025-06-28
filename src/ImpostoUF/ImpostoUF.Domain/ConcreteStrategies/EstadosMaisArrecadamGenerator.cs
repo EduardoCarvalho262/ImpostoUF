@@ -1,10 +1,12 @@
-﻿using ImpostoUF.Application.Interfaces.Strategy;
-using ImpostoUF.Domain.Entities;
+﻿using ImpostoUF.Domain.Entities;
+using ImpostoUF.Domain.Interfaces.Strategy;
 
-namespace ImpostoUF.Application.ConcreteStrategies
+namespace ImpostoUF.Domain.ConcreteStrategies
 {
     public class EstadosMaisArrecadamGenerator : IRelatorioGenerator
     {
+        public string TipoRelatorio => "TODO";
+
         public List<ArrecadacaoIpi> GerarRelatorio()
         {
             ArrecadacaoIpi arrecadacaoIpi = new ArrecadacaoIpi();

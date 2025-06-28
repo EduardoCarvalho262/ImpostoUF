@@ -1,20 +1,23 @@
 ﻿using ImpostoUF.Application.Requests;
+using ImpostoUF.Application.Response;
 using ImpostoUF.Application.UseCases;
+using ImpostoUF.Domain.ConcreteStrategies;
 using ImpostoUF.Domain.Entities;
+using ImpostoUF.Domain.Interfaces.Strategy;
+using Moq;
 using Shouldly;
 
 namespace ImpostoUF.Tests.Application.UseCases
 {
     public class GerarRelatorioUseCaseTest
     {
-
         private readonly GerarRelatorioUserCase _gerarRelatorioUseCase;
-
         public GerarRelatorioUseCaseTest() 
         {
-            _gerarRelatorioUseCase = new GerarRelatorioUserCase();
+            var lista = new List<IRelatorioGenerator>();
+            lista.Add(new MediaArrecadacaoAnualGenerator());
+            _gerarRelatorioUseCase = new GerarRelatorioUserCase(lista.AsEnumerable());
         }
-
 
         [Fact]
         public void DadoRequestTipoMediaAnualIpiEstados_QuandoChamarOUseCase_RetornarUmaListaDeArrecadacao()
@@ -29,10 +32,10 @@ namespace ImpostoUF.Tests.Application.UseCases
             arrecadacaoIpi.IpiAutomoveis = 20.45;
 
             //Act
-            Task <List<ArrecadacaoIpi>> response = _gerarRelatorioUseCase.ExecuteAsync(request);
+            Task<GerarRelatorioResponse<List<ArrecadacaoIpi>>> response = _gerarRelatorioUseCase.ExecuteAsync(request);
 
             //Assert
-            response.Result.ShouldHaveSingleItem();
+            response.Result.Dados.ShouldHaveSingleItem();
         }
     }
 }

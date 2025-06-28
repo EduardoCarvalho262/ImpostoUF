@@ -1,10 +1,12 @@
-﻿using ImpostoUF.Application.Interfaces.Strategy;
+﻿using ImpostoUF.Domain.Interfaces.Strategy;
 using ImpostoUF.Domain.Entities;
 
-namespace ImpostoUF.Application.ConcreteStrategies
+namespace ImpostoUF.Domain.ConcreteStrategies
 {
     public class MediaArrecadacaoAnualGenerator : IRelatorioGenerator
     {
+        public string TipoRelatorio => "media-anual";
+
         public List<ArrecadacaoIpi> GerarRelatorio()
         {
             ArrecadacaoIpi arrecadacaoIpi = new ArrecadacaoIpi();

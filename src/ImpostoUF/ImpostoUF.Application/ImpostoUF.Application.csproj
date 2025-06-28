@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Response\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ImpostoUF.Domain\ImpostoUF.Domain.csproj" />
   </ItemGroup>
 
