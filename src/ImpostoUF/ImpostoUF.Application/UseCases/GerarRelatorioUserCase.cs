@@ -23,6 +23,7 @@ namespace ImpostoUF.Application.UseCases
             }
 
             //TODO buscar os dados do Lambda passando os parâmetros
+            //TODO Cache dos dados buscados.
 
             var estrategia = _relatorioGenerators.FirstOrDefault(g => g.TipoRelatorio.Equals(request.Tipo, StringComparison.OrdinalIgnoreCase));
 
